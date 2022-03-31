@@ -1,0 +1,20 @@
+# .github/workflows/pr-cleanup.yml
+name: PRCleanup
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  deployment:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'Helm Deploy'
+      uses: vimeda/helm@v1.6.8
+      with:
+        release: 'fluent-bit'
+        namespace: 'default'
+        chart: 'fluent/fluent-bit'
+        repo: 'https://fluent.github.io/helm-charts'
+        repo-alias: 'fluent'
+      env:
+        KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'

@@ -10,7 +10,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Helm Deploy'
-      uses: 'deliverybot/helm@v1.6.4'
+      uses: 'deliverybot/helm@v1.7.0'
       with:
         release: 'fluent-bit'
         namespace: 'default'

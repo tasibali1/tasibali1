@@ -1,4 +1,4 @@
-# .github/workflows/pr-cleanup.yml
+
 name: Helm
 on:
   push:
@@ -19,3 +19,4 @@ jobs:
         repo-alias: 'fluent'
       env:
         KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
+
